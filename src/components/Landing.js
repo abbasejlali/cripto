@@ -5,6 +5,7 @@ import { getAPI } from "../Servies/api";
 
 // components
 import Loading from "./Loading";
+import CardCripto from "./CardCripto";
 
 const Landing = () => {
   const [coin, setCoin] = useState([]);
@@ -24,7 +25,7 @@ const Landing = () => {
       <input type="text" placeholder="enter cripto name" />
       <div>
         {coin.length ? (
-          coin.map((coin) => <p key={coin.id}>{coin.name}</p>)
+          coin.map((coin) => <CardCripto key={coin.id} coin={coin} />)
         ) : (
           <Loading />
         )}
