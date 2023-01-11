@@ -7,6 +7,9 @@ import { getAPI } from "../Servies/api";
 import Loading from "./Loading";
 import CardCripto from "./CardCripto";
 
+// Styles
+import styles from "./Landing.module.css";
+
 const Landing = () => {
   const [coin, setCoin] = useState([]);
 
@@ -29,7 +32,7 @@ const Landing = () => {
   );
 
   return (
-    <>
+    <div className={styles.main}>
       {console.log(search_betting)}
       <input
         type="text"
@@ -44,7 +47,7 @@ const Landing = () => {
           <Loading />
         )}
       </div>
-    </>
+    </div>
   );
 };
 
