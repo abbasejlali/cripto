@@ -30,7 +30,7 @@ const Landing = () => {
 
   return (
     <>
-      {console.log(search)}
+      {console.log(search_betting)}
       <input
         type="text"
         placeholder="enter cripto name"
