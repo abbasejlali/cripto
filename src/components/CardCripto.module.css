@@ -1,7 +1,6 @@
 .main {
   display: flex;
   justify-content: space-evenly;
-  padding: 0 1rem;
   align-items: center;
   max-width: 100%;
   width: 100%;
@@ -20,6 +19,7 @@
   -moz-transition: box-shadow 0.3s ease-in-out;
   -ms-transition: box-shadow 0.3s ease-in-out;
   -o-transition: box-shadow 0.3s ease-in-out;
+  flex-wrap: wrap;
 }
 .main:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.104);
