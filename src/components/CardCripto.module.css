@@ -1,6 +1,7 @@
 .main {
   display: flex;
   justify-content: space-evenly;
+  padding: 0 1rem;
   align-items: center;
   max-width: 100%;
   width: 100%;
@@ -13,13 +14,32 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  margin-bottom: 0.75rem;
+  transition: box-shadow 0.3s ease-in-out;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+  -moz-transition: box-shadow 0.3s ease-in-out;
+  -ms-transition: box-shadow 0.3s ease-in-out;
+  -o-transition: box-shadow 0.3s ease-in-out;
 }
+.main:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.104);
+}
+
 .main > img {
   width: 50px;
   height: 50px;
   object-fit: cover;
+  text-align: center;
 }
 .main > h2 {
   font-size: 17px;
   font-weight: 600;
+  text-align: center;
+}
+.greencolor {
+  color: green;
+}
+
+.redcolor {
+  color: red;
 }

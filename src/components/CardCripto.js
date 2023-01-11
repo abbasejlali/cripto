@@ -18,10 +18,14 @@ const CardCripto = ({ coin }) => {
       <h2>{name}</h2>
       <span className={styles.symbol}>{symbol.toUpperCase()}</span>
       <span className={styles.price}>{current_price.toLocaleString()}</span>
-      <span className={styles.market_cap}>{market_cap}</span>
-      <span className={styles.price_change}>
-        {price_change_percentage_24h.toLocaleString()}
+      <span
+        className={
+          price_change_percentage_24h > 0 ? styles.greencolor : styles.redcolor
+        }
+      >
+        {price_change_percentage_24h}
       </span>
+      <span className={styles.market_cap}>{market_cap.toLocaleString()}</span>
     </div>
   );
 };
