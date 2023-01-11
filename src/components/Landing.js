@@ -10,6 +10,7 @@ import CardCripto from "./CardCripto";
 const Landing = () => {
   const [coin, setCoin] = useState([]);
 
+  const [search, setSearch] = useState("");
   useEffect(() => {
     const fetchAPI = async () => {
       const api = await getAPI();
@@ -17,15 +18,28 @@ const Landing = () => {
     };
 
     fetchAPI();
-  }, [coin]);
+  }, []);
+
+  const changeHandeler = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const search_betting = coin.filter((coin) =>
+    coin.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <>
-      {console.log(coin)}
-      <input type="text" placeholder="enter cripto name" />
+      {console.log(search)}
+      <input
+        type="text"
+        placeholder="enter cripto name"
+        value={search}
+        onChange={changeHandeler}
+      />
       <div>
         {coin.length ? (
-          coin.map((coin) => <CardCripto key={coin.id} coin={coin} />)
+          search_betting.map((coin) => <CardCripto key={coin.id} coin={coin} />)
         ) : (
           <Loading />
         )}
