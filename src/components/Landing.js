@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 // API
-import getAPI from "../Servies/api.js";
+import { getAPI } from "../Servies/api";
 
 const Landing = () => {
   const [coin, setCoin] = useState([]);
@@ -15,7 +15,16 @@ const Landing = () => {
     fetchAPI();
   }, []);
 
-  return <div>{console.log(coin)}</div>;
+  return (
+    <>
+      <input type="text" placeholder="enter cripto name" />
+      <div>
+        {coin.map((coin) => (
+          <p key={coin.id}>{coin.name}</p>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Landing;
