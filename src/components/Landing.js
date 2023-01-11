@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 // API
 import { getAPI } from "../Servies/api";
 
+// components
+import Loading from "./Loading";
+
 const Landing = () => {
   const [coin, setCoin] = useState([]);
 
@@ -13,15 +16,18 @@ const Landing = () => {
     };
 
     fetchAPI();
-  }, []);
+  }, [coin]);
 
   return (
     <>
+      {console.log(coin)}
       <input type="text" placeholder="enter cripto name" />
       <div>
-        {coin.map((coin) => (
-          <p key={coin.id}>{coin.name}</p>
-        ))}
+        {coin.length ? (
+          coin.map((coin) => <p key={coin.id}>{coin.name}</p>)
+        ) : (
+          <Loading />
+        )}
       </div>
     </>
   );
