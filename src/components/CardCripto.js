@@ -13,10 +13,10 @@ const CardCripto = ({ coin }) => {
     <div>
       <img src={image} alt="icon_cripto" />
       <span>{name}</span>
-      <span>{symbol}</span>
-      <span>{current_price}</span>
+      <span>{symbol.toUpperCase()}</span>
+      <span>{current_price.toLocaleString()}</span>
       <span>{market_cap}</span>
-      <span>{price_change_percentage_24h}</span>
+      <span>{price_change_percentage_24h.toLocaleString()}</span>
     </div>
   );
 };
