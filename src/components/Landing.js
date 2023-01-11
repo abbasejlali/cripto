@@ -21,7 +21,7 @@ const Landing = () => {
     };
 
     fetchAPI();
-  }, []);
+  }, [""]);
 
   const changeHandeler = (e) => {
     setSearch(e.target.value);
@@ -33,7 +33,6 @@ const Landing = () => {
 
   return (
     <div className={styles.main}>
-      {console.log(search_betting)}
       <input
         type="text"
         placeholder="enter cripto name"
